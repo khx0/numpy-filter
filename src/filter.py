@@ -110,10 +110,10 @@ def filter_B_from_A_rowwise(A, B):
 
     '''
     Arguments:
-        A and B are two numpy arrays of equal column numbers.
+        A and B are two 2d numpy arrays with an equal number of columns.
 
-    Returns an array with equal column numbers where all rows in B, that also are
-    contained in A are delted from A.
+    Returns an array with an equal number of columns, where all rows in B, that are also
+    contained in A, will be deleted from A.
 
     Example:
 
