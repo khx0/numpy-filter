@@ -3,7 +3,7 @@
 ##########################################################################################
 # author: Nikolas Schnellbaecher
 # contact: khx0@posteo.net
-# date: 2017-12-08
+# date: 2018-01-08
 # file: test_filter.py
 ##########################################################################################
 
@@ -121,8 +121,24 @@ class FilterTest(unittest.TestCase):
 
         self.assertEqual(getNeighborAverage(X, 0), 2.0)
         self.assertEqual(getNeighborAverage(X, 3), 3.5)
-        self.assertEqual(getNeighborAverage(X, 5), 4.0)
+        self.assertEqual(getNeighborAverage(X, 5), 4.0)    
+    
+    def test_15(self):
         
+        X = np.array([np.nan, np.nan])
+        self.assertEqual(getNeighborAverage(X, 0), None)
+        self.assertEqual(getNeighborAverage(X, 1), None)
+        
+        X = np.array([np.nan, np.nan, np.nan])
+        self.assertEqual(getNeighborAverage(X, 0), None)
+        self.assertEqual(getNeighborAverage(X, 1), None)
+        self.assertEqual(getNeighborAverage(X, 2), None)
+        
+        X = np.array([np.nan, np.nan, np.nan, np.nan])
+        self.assertEqual(getNeighborAverage(X, 0), None)
+        self.assertEqual(getNeighborAverage(X, 1), None)
+        self.assertEqual(getNeighborAverage(X, 2), None)
+        self.assertEqual(getNeighborAverage(X, 3), None)
     
     def test_rowwise_filter_01(self):
         
