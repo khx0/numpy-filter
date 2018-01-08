@@ -91,20 +91,22 @@ def getNeighborAverage(X, index):
                     return right
                 else:
                     continue
+                    
             elif (((index - cc) >= 0) and (index + cc) >= len(X)):
                 left = X[index - cc]
                 if (not np.isnan(left)):
                     return left
                 else:
                     continue
+                    
             elif ( (index - cc < 0) and (index + cc) < len(X)):
                 right = X[index + cc]
                 if (not np.isnan(right)):
                     return right
                 else:
                     continue
-            else:
             
+            else:
                 return None
 
     return None
