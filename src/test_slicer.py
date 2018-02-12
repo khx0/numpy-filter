@@ -175,6 +175,28 @@ class SlicerTest(unittest.TestCase):
         self.assertTrue(np.array_equal(intervals, intervalsGT))
         self.assertTrue(np.array_equal(indexList, indexListGT))
 
+    def test_15(self):
+    
+        X = [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        intervalsGT = [[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]]
+        indexListGT = [(0, 6)]
+        
+        intervals, indexList = getMonotonicSubIntervals(X)
+    
+        self.assertTrue(np.array_equal(intervals, intervalsGT))
+        self.assertTrue(np.array_equal(indexList, indexListGT))
+
+    def test_16(self):
+    
+        X = [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+        intervalsGT = [[1.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 1.0]]
+        indexListGT = [(0, 5), (5, 6)]
+        
+        intervals, indexList = getMonotonicSubIntervals(X)
+    
+        self.assertTrue(np.array_equal(intervals, intervalsGT))
+        self.assertTrue(np.array_equal(indexList, indexListGT))
+
 if __name__ == '__main__':
 
     unittest.main()
