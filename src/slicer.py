@@ -11,6 +11,22 @@ import os
 import sys
 import numpy as np
 
+def isMonotonicallyIncreasing(X):
+    '''
+    Takes a 1d numpy array X as input.
+    Returns a boolean (True/False) depending on if X is in fact
+    monotonically increasing or not.
+    '''
+    return np.all(X[1:] >= X[:-1])
+
+def isStrictlyMonotonicallyIncreasing(X):
+    '''
+    Takes a 1d numpy array X as input.
+    Returns a boolean (True/False) depending on if X is in fact 
+    strictly monotonically increasing or not.
+    '''
+    return np.all(X[1:] > X[:-1]) 
+
 def getMonotonicSubIntervals(X):
     '''
     Arguments:
