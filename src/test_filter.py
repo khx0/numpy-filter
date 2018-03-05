@@ -121,7 +121,7 @@ class FilterTest(unittest.TestCase):
 
         self.assertEqual(getNeighborAverage(X, 0), 2.0)
         self.assertEqual(getNeighborAverage(X, 3), 3.5)
-        self.assertEqual(getNeighborAverage(X, 5), 4.0)    
+        self.assertEqual(getNeighborAverage(X, 5), 4.0)
     
     def test_15(self):
         
@@ -294,7 +294,6 @@ if __name__ == '__main__':
 
 
 
-    
     
     
     

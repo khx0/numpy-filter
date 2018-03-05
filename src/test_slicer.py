@@ -12,6 +12,10 @@ import sys
 import numpy as np
 import unittest
 
+from slicer import isMonotonicallyIncreasing
+from slicer import isStrictlyMonotonicallyIncreasing
+from slicer import isMonotonicallyDecreasing
+from slicer import isStrictlyMonotonicallyDecreasing
 from slicer import getMonotonicSubIntervals
 
 class SlicerTest(unittest.TestCase):
@@ -196,6 +200,87 @@ class SlicerTest(unittest.TestCase):
     
         self.assertTrue(np.array_equal(intervals, intervalsGT))
         self.assertTrue(np.array_equal(indexList, indexListGT))
+        
+
+    def test_isMonotonicallyIncreasing(self):
+        
+        X = np.array([0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
+        self.assertTrue(isMonotonicallyIncreasing(X))
+        
+        X = np.linspace(0.0, 100.0, 100)
+        self.assertTrue(isMonotonicallyIncreasing(X))
+        
+        X = np.zeros((100))
+        self.assertTrue(isMonotonicallyIncreasing(X))
+        
+        X = np.ones((100))
+        self.assertTrue(isMonotonicallyIncreasing(X))
+        
+        X = np.array([0.0, -1.0, -2.0, -3.0])
+        self.assertFalse(isMonotonicallyIncreasing(X))
+    
+    def test_isStrictlyMonotonicallyIncreasing(self):
+    
+        X = np.array([0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
+        self.assertTrue(isStrictlyMonotonicallyIncreasing(X))
+        
+        X = np.linspace(0.0, 100.0, 100)
+        self.assertTrue(isStrictlyMonotonicallyIncreasing(X))
+        
+        X = np.zeros((100))
+        self.assertFalse(isStrictlyMonotonicallyIncreasing(X))
+        
+        X = np.ones((100))
+        self.assertFalse(isStrictlyMonotonicallyIncreasing(X))
+        
+        X = np.array([0.0, -1.0, -2.0, -3.0])
+        self.assertFalse(isStrictlyMonotonicallyIncreasing(X))
+        
+    def test_isMonotonicallyDecreasing(self):
+        
+        X = np.array([0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
+        self.assertFalse(isMonotonicallyDecreasing(X))
+        
+        X = np.flip(X, axis = 0)
+        self.assertTrue(isMonotonicallyDecreasing(X))
+        
+        X = np.linspace(0.0, 100.0, 100)
+        self.assertFalse(isMonotonicallyDecreasing(X))
+        
+        X = np.flip(X, axis = 0)
+        self.assertTrue(isMonotonicallyDecreasing(X))
+        
+        X = np.zeros((100))
+        self.assertTrue(isMonotonicallyDecreasing(X))
+        
+        X = np.ones((100))
+        self.assertTrue(isMonotonicallyDecreasing(X))
+        
+        X = np.array([0.0, -1.0, -2.0, -3.0])
+        self.assertTrue(isMonotonicallyDecreasing(X))
+        
+    def test_isStrictlyMonotonicallyDecreasing(self):
+        
+        X = np.array([0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
+        self.assertFalse(isStrictlyMonotonicallyDecreasing(X))
+        
+        X = np.flip(X, axis = 0)
+        self.assertTrue(isStrictlyMonotonicallyDecreasing(X))
+        
+        X = np.linspace(0.0, 100.0, 100)
+        self.assertFalse(isStrictlyMonotonicallyDecreasing(X))
+        
+        X = np.flip(X, axis = 0)
+        self.assertTrue(isStrictlyMonotonicallyDecreasing(X))
+        
+        X = np.zeros((100))
+        self.assertFalse(isStrictlyMonotonicallyDecreasing(X))
+        
+        X = np.ones((100))
+        self.assertFalse(isStrictlyMonotonicallyDecreasing(X))
+        
+        X = np.array([0.0, -1.0, -2.0, -3.0])
+        self.assertTrue(isStrictlyMonotonicallyDecreasing(X))
 
 if __name__ == '__main__':
 

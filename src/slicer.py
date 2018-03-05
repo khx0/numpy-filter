@@ -26,6 +26,22 @@ def isStrictlyMonotonicallyIncreasing(X):
     strictly monotonically increasing or not.
     '''
     return np.all(X[1:] > X[:-1]) 
+    
+def isMonotonicallyDecreasing(X):
+    '''
+    Takes a 1d numpy array X as input.
+    Returns a boolean (True/False) depending on if X is in fact
+    monotonically decreasing or not.
+    '''
+    return np.all(X[1:] <= X[:-1])
+
+def isStrictlyMonotonicallyDecreasing(X):
+    '''
+    Takes a 1d numpy array X as input.
+    Returns a boolean (True/False) depending on if X is in fact 
+    strictly monotonically decreasing or not.
+    '''
+    return np.all(X[1:] < X[:-1]) 
 
 def getMonotonicSubIntervals(X):
     '''
