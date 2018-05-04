@@ -56,6 +56,31 @@ class MatrixtoolsTest(unittest.TestCase):
         gt[1, 0] = 2.0
         gt[1, 1] = 4.0
         self.assertTrue(np.array_equal(res, gt))
+        
+        
+        X = np.zeros((3, 3))
+        X[0, 0] = 1.0
+        X[0, 1] = 2.0
+        X[0, 2] = 3.0
+        X[1, 1] = 4.0
+        X[1, 2] = 5.0
+        X[2, 2] = 6.0
+        
+        res = fillSymmetricMatrix(X)
+        gt = np.zeros((3, 3))
+        gt[0, 0] = 1.0
+        gt[0, 1] = 2.0
+        gt[1, 0] = 2.0
+        gt[0, 2] = 3.0
+        gt[2, 0] = 3.0
+        gt[1, 1] = 4.0
+        gt[1, 2] = 5.0
+        gt[2, 1] = 5.0
+        gt[2, 2] = 6.0
+        self.assertTrue(np.array_equal(res, gt))
+  
+        print X
+        print gt
     
         return None
 
