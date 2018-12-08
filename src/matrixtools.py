@@ -35,16 +35,3 @@ def fillSymmetricMatrix(X):
 if __name__ == '__main__':
 
     pass
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    

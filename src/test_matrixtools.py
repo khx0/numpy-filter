@@ -79,25 +79,11 @@ class MatrixtoolsTest(unittest.TestCase):
         gt[2, 2] = 6.0
         self.assertTrue(np.array_equal(res, gt))
   
-        print X
-        print gt
+        print(X)
+        print(gt)
     
         return None
 
 if __name__ == '__main__':
 
     unittest.main()
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    

@@ -50,11 +50,11 @@ def getNeighborAverage(X, index):
     '''
 
     if (len(X) == 1):
-        print "Error: Array of length 1 passed."
+        print("Error: Array of length 1 passed.")
         sys.exit(1)
 
     if (index < 0 or index >= len(X)):
-        print "Error: Index out of bounds."
+        print("Error: Index out of bounds.")
         sys.exit(1)
 
     if (index == 0):
