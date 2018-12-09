@@ -7,3 +7,5 @@ modules:
 * filter.py
 * slicer.py
 * matrixtools.py
+
+All functionality has been tested with Python 3.7.0.
