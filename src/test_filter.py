@@ -3,8 +3,10 @@
 ##########################################################################################
 # author: Nikolas Schnellbaecher
 # contact: khx0@posteo.net
-# date: 2018-01-08
+# date: 2019-02-24
 # file: test_filter.py
+# tested with python 2.7.15
+# tested with python 3.7.2
 ##########################################################################################
 
 import os
@@ -276,7 +278,7 @@ class FilterTest(unittest.TestCase):
         B = np.array([[1, 2],
                       [3, 4],
                       [5, 6]])
-                  
+            
         X = filter_B_from_A_rowwise(A, B)
         
         res = A
@@ -288,5 +290,5 @@ class FilterTest(unittest.TestCase):
         self.assertEqual(f2, True)        
 
 if __name__ == '__main__':
-
+    
     unittest.main()
