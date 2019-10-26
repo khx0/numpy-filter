@@ -3,7 +3,7 @@
 ##########################################################################################
 # author: Nikolas Schnellbaecher
 # contact: khx0@posteo.net
-# date: 2019-02-24
+# date: 2019-10-26
 # file: filter.py
 # tested with python 2.7.15
 # tested with python 3.7.2
@@ -14,7 +14,6 @@ import sys
 import numpy as np
 
 def getNeighborAverage(X, index):
-
     '''
     Arguments:
         X: a 1D numpy array
@@ -114,7 +113,6 @@ def getNeighborAverage(X, index):
     return None
     
 def filter_B_from_A_rowwise(A, B):
-
     '''
     Arguments:
         A and B are two 2d numpy arrays with an equal number of columns.
@@ -166,6 +164,49 @@ def filter_B_from_A_rowwise(A, B):
     A = np.delete(A, row_indices, axis = 0)
     
     return A
+
+def getDisjointIntervals(X):
+    """
+    Takes a 1D list of integers X as input and returns a list of disjoint
+    intervals, stating at which intervals X is non-zero.
+    Performs a single pass over X.
+    """
+    if (len(X) == 0):
+        return []
+    else:
+        cc = 0
+        currentToken = -1
+        intervals = []
+        reading = False
+        while cc < len(X):
+            
+            if (X[cc] > 0) and (not reading):
+                idxLeft = cc
+                currentToken = X[cc]
+                reading = True
+            
+            elif (X[cc] != currentToken and reading):
+                idxRight = (cc - 1)
+                record = (int(idxLeft), int(idxRight), int(currentToken))
+                intervals.append(record)
+                
+                if (X[cc] > 0):
+                    idxLeft = cc
+                    currentToken = X[cc]
+                    reading = True
+                else:
+                    reading = False
+            
+            cc += 1
+
+        # termination case
+        if reading:
+            assert cc == len(X)
+            idxRight = cc - 1
+            record = (int(idxLeft), int(idxRight), int(currentToken))
+            intervals.append(record)
+    
+        return intervals
 
 if __name__ == '__main__':
 
