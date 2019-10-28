@@ -40,7 +40,7 @@ class TestGetDisjointIntervals(unittest.TestCase):
     	self.assertTrue(res == [(2, 4, 1), (6, 6, 1)])
 
     def test_02(self):
-
+        ''' pathological cases'''
         X = []
         res = getDisjointIntervals(X)
         self.assertTrue(res == [])
@@ -64,6 +64,25 @@ class TestGetDisjointIntervals(unittest.TestCase):
         X = [0, 0, 0, 0, 0]
         res = getDisjointIntervals(X)
         self.assertTrue(res == [])
+    
+    def test_03(self):
+
+        X = [1, 1]
+        res = getDisjointIntervals(X)
+        self.assertTrue(res == [(0, 1, 1)])
+
+        X = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        res = getDisjointIntervals(X)
+        self.assertTrue(res == [(0, 0, 1),
+                                (1, 1, 2),
+                                (2, 2, 3),
+                                (3, 3, 4),
+                                (4, 4, 5),
+                                (5, 5, 6),
+                                (6, 6, 7),
+                                (7, 7, 8),
+                                (8, 8, 9),
+                                (9, 9, 10)])
 
 if __name__ == '__main__':
 
