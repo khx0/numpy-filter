@@ -196,7 +196,7 @@ def getDisjointIntervals(X):
                     reading = True
                 else:
                     reading = False
-            
+
             cc += 1
 
         # termination case
@@ -205,7 +205,7 @@ def getDisjointIntervals(X):
             idxRight = cc - 1
             record = (int(idxLeft), int(idxRight), int(currentToken))
             intervals.append(record)
-    
+
         return intervals
 
 if __name__ == '__main__':
