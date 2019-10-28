@@ -9,6 +9,19 @@
 # tested with python 3.7.2
 ##########################################################################################
 
+'''
+Also tested with pytest (version 5.2.2)
+cd to the directory containing this script and
+then invoke
+$python -m pytest
+where python is your chosen python interpreter or
+alternatively simply call
+$pytest
+or
+$pytest -v
+using the default python interpreter.
+'''
+
 import os
 import sys
 import numpy as np
@@ -31,13 +44,13 @@ class TestGetDisjointIntervals(unittest.TestCase):
         res = getDisjointIntervals(X)
         self.assertTrue(res == [(0, 0, 1), (2, 2, 1)])
 
-    	X = [0, 0, 1, 1, 1]
-    	res = getDisjointIntervals(X)
-    	self.assertTrue(res == [(2, 4, 1)])
+        X = [0, 0, 1, 1, 1]
+        res = getDisjointIntervals(X)
+        self.assertTrue(res == [(2, 4, 1)])
 
-    	X = [0, 0, 1, 1, 1, 0, 1]
-    	res = getDisjointIntervals(X)
-    	self.assertTrue(res == [(2, 4, 1), (6, 6, 1)])
+        X = [0, 0, 1, 1, 1, 0, 1]
+        res = getDisjointIntervals(X)
+        self.assertTrue(res == [(2, 4, 1), (6, 6, 1)])
 
     def test_02(self):
         ''' pathological cases'''
