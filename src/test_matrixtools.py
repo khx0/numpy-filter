@@ -3,11 +3,24 @@
 ##########################################################################################
 # author: Nikolas Schnellbaecher
 # contact: khx0@posteo.net
-# date: 2019-02-24
+# date: 2019-10-29
 # file: test_matrixtools.py
 # tested with python 2.7.15
 # tested with python 3.7.2
 ##########################################################################################
+
+'''
+Also tested with pytest (version 5.2.2)
+cd to the directory containing this script and
+then invoke
+$python -m pytest
+where python is your chosen python interpreter or
+alternatively simply call
+$pytest
+or
+$pytest -v
+using the default python interpreter.
+'''
 
 import os
 import sys
