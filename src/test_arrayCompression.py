@@ -3,31 +3,31 @@
 ##########################################################################################
 # author: Nikolas Schnellbaecher
 # contact: khx0@posteo.net
-# date: 2019-10-29
-# file: test_filter_getDisjointIntervals.py
-# tested with python 2.7.15
+# date: 2019-11-01
+# file: test_arrayCompression.py
 # tested with python 3.7.2
 ##########################################################################################
 
 '''
-Also tested with pytest (version 5.2.2)
+Tested with pytest version 5.5.2.
+Invocation:
 cd to the directory containing this script and
 then invoke
-$python -m pytest
+$python -m pytest (-v)
 where python is your chosen python interpreter or
 alternatively simply call
 $pytest
 or
 $pytest -v
-using the default python interpreter.
+using the default python interpreter on your system.
+The -v flag (equal to --verbose) sets the pytest mode to verbose.
 '''
 
 import os
-import sys
 import numpy as np
 import unittest
 
-from filter import getDisjointIntervals
+from arrayCompression import getDisjointIntervals
 
 class TestGetDisjointIntervals(unittest.TestCase):
     """
