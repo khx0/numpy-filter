@@ -3,9 +3,8 @@
 ##########################################################################################
 # author: Nikolas Schnellbaecher
 # contact: khx0@posteo.net
-# date: 2019-02-24
+# date: 2019-11-11
 # file: slicer.py
-# tested with python 2.7.15
 # tested with python 3.7.2
 ##########################################################################################
 
@@ -13,7 +12,7 @@ import os
 import sys
 import numpy as np
 
-def isMonotonicallyIncreasing(X):
+def isMonotonicallyIncreasing(X: np.ndarray) -> bool:
     '''
     Takes a 1d numpy array X as input.
     Returns a boolean (True/False) depending on if X is in fact
@@ -21,7 +20,7 @@ def isMonotonicallyIncreasing(X):
     '''
     return np.all(X[1:] >= X[:-1])
 
-def isStrictlyMonotonicallyIncreasing(X):
+def isStrictlyMonotonicallyIncreasing(X: np.ndarray) -> bool:
     '''
     Takes a 1d numpy array X as input.
     Returns a boolean (True/False) depending on if X is in fact 
@@ -29,7 +28,7 @@ def isStrictlyMonotonicallyIncreasing(X):
     '''
     return np.all(X[1:] > X[:-1]) 
     
-def isMonotonicallyDecreasing(X):
+def isMonotonicallyDecreasing(X: np.ndarray) -> bool:
     '''
     Takes a 1d numpy array X as input.
     Returns a boolean (True/False) depending on if X is in fact
@@ -37,7 +36,7 @@ def isMonotonicallyDecreasing(X):
     '''
     return np.all(X[1:] <= X[:-1])
 
-def isStrictlyMonotonicallyDecreasing(X):
+def isStrictlyMonotonicallyDecreasing(X: np.ndarray) -> bool:
     '''
     Takes a 1d numpy array X as input.
     Returns a boolean (True/False) depending on if X is in fact 
@@ -45,7 +44,7 @@ def isStrictlyMonotonicallyDecreasing(X):
     '''
     return np.all(X[1:] < X[:-1]) 
 
-def getMonotonicSubIntervals(X):
+def getMonotonicSubIntervals(X: np.ndarray) -> (list, list):
     '''
     Arguments:
         X: a 1D numpy array (with at least two entries)

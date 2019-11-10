@@ -3,15 +3,14 @@
 ##########################################################################################
 # author: Nikolas Schnellbaecher
 # contact: khx0@posteo.net
-# date: 2019-02-24
+# date: 2019-11-10
 # file: matrixtools.py
-# tested with python 2.7.15
 # tested with python 3.7.2
 ##########################################################################################
 
 import numpy as np
 
-def fillSymmetricMatrix(X):
+def fillSymmetricMatrix(X: np.ndarray) -> np.ndarray:
     '''
     fillSymmetricMatrix routine
     This routine assumes that the input matrix/array is upper triangular
