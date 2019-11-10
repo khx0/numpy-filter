@@ -3,7 +3,7 @@
 ##########################################################################################
 # author: Nikolas Schnellbaecher
 # contact: khx0@posteo.net
-# date: 2019-11-01
+# date: 2019-11-10
 # file: filter.py
 # tested with python 3.7.2
 ##########################################################################################
@@ -12,7 +12,7 @@ import os
 import sys
 import numpy as np
 
-def getNeighborAverage(X, index):
+def getNeighborAverage(X: np.ndarray, index: int) -> float:
     '''
     Arguments:
         X: a 1D numpy array
@@ -110,8 +110,8 @@ def getNeighborAverage(X, index):
                 return None
 
     return None
-    
-def filter_B_from_A_rowwise(A, B):
+
+def filter_B_from_A_rowwise(A: np.ndarray, B: np.ndarray) -> np.ndarray:
     '''
     Arguments:
         A and B are two 2d numpy arrays with an equal number of columns.

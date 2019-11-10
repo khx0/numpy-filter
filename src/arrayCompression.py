@@ -3,7 +3,7 @@
 ##########################################################################################
 # author: Nikolas Schnellbaecher
 # contact: khx0@posteo.net
-# date: 2019-11-01
+# date: 2019-11-10
 # file: arrayCompression.py
 ##########################################################################################
 
@@ -11,7 +11,7 @@ import os
 import sys
 import numpy as np
 
-def getDisjointIntervals(X):
+def getDisjointIntervals(X: np.ndarray) -> list:
     """
     Takes a 1D list of integers X as input and returns a list of disjoint
     intervals, stating at which intervals X is non-zero.
