@@ -3,12 +3,11 @@
 ##########################################################################################
 # author: Nikolas Schnellbaecher
 # contact: khx0@posteo.net
-# date: 2019-11-10
+# date: 2021-01-23
 # file: filter.py
-# tested with python 3.7.2
+# tested with python 3.7.6 and numpy 1.19.5
 ##########################################################################################
 
-import os
 import sys
 import numpy as np
 
@@ -49,30 +48,30 @@ def getNeighborAverage(X: np.ndarray, index: int) -> float:
 
     '''
 
-    if (len(X) == 1):
+    if len(X) == 1:
         print("Error: Array of length 1 passed.")
         sys.exit(1)
 
-    if (index < 0 or index >= len(X)):
+    if (index < 0) or (index >= len(X)):
         print("Error: Index out of bounds.")
         sys.exit(1)
 
-    if (index == 0):
+    if index == 0:
         # left border --> move to the right only
         cc = index + 1
-        while (cc < len(X)):
+        while cc < len(X):
             tmp = X[cc]
-            if (not np.isnan(tmp)):
+            if not np.isnan(tmp):
                 return tmp
             else:
                 cc += 1
 
-    elif (index == (len(X) - 1)):
+    elif index == (len(X) - 1):
         # right border --> move to the left only
         cc = index - 1
-        while (cc >= 0):
+        while cc >= 0:
             tmp = X[cc]
-            if (not np.isnan(tmp)):
+            if not np.isnan(tmp):
                 return tmp
             else:
                 cc -= 1
@@ -83,7 +82,7 @@ def getNeighborAverage(X: np.ndarray, index: int) -> float:
 
             if ((index - cc) >= 0) and ((index + cc) < len(X)):
                 left, right = X[index - cc], X[index + cc]
-                if ((not(np.isnan(left))) and (not(np.isnan(right)))):
+                if (not(np.isnan(left))) and (not(np.isnan(right))):
                     return (left + right) / 2.0
                 elif (not(np.isnan(left))):
                     return left
@@ -91,21 +90,20 @@ def getNeighborAverage(X: np.ndarray, index: int) -> float:
                     return right
                 else:
                     continue
-                    
-            elif (((index - cc) >= 0) and (index + cc) >= len(X)):
+
+            elif ((index - cc) >= 0) and (index + cc) >= len(X):
                 left = X[index - cc]
-                if (not np.isnan(left)):
+                if not np.isnan(left):
                     return left
                 else:
                     continue
-                    
-            elif ( (index - cc < 0) and (index + cc) < len(X)):
+
+            elif (index - cc < 0) and ((index + cc) < len(X)):
                 right = X[index + cc]
-                if (not np.isnan(right)):
+                if not np.isnan(right):
                     return right
                 else:
                     continue
-            
             else:
                 return None
 
@@ -152,12 +150,12 @@ def filter_B_from_A_rowwise(A: np.ndarray, B: np.ndarray) -> np.ndarray:
     for i in range(nRowsA):
 
         thisRow = A[i, :]
-    
+
         for j in range(nRowsB):
 
             thatRow = B[j, :]
 
-            if (np.array_equal(thisRow, thatRow)):
+            if np.array_equal(thisRow, thatRow):
                 row_indices.append(i)
 
     A = np.delete(A, row_indices, axis = 0)

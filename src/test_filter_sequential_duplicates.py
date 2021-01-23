@@ -12,13 +12,12 @@
 --- Example invocations ---
 Cd to the directory containing this script and there invoke
 $python -m pytest (-v)
-where python is your chosen python interpreter or
-alternatively simply call
+where python is your chosen python interpreter or alternatively only call
 $pytest
 or
 $pytest -v
 using the default python interpreter on your system.
-The -v flag (equal to --verbose) sets the pytest mode to verbose.
+The -v flag (equal to --verbose) sets the pytest mode to 'verbose'.
 -------------------------------------------------------------------------------
 To only run the tests in this test file use
 $python -m pytest (-v) test_*.py
@@ -98,7 +97,6 @@ class FilterSequentialDuplicatesTest(unittest.TestCase):
         self.assertTrue(multiplicity == reference)
 
         return None
-
 
 if __name__ == '__main__':
 

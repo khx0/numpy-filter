@@ -3,7 +3,7 @@ light weight data filter routines using numpy
 
 mostly stand alone functions or classes which can be integrated into data evaluation pipelines
 
-modules:
+## modules
 * array_compression.py
 * filter_sequential_duplicates.py
 * filter.py

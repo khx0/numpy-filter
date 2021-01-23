@@ -29,8 +29,9 @@ $python test_*.py
 Tested with pytest version 6.2.1.
 '''
 
-import numpy as np
+import platform
 import unittest
+import numpy as np
 
 from filter import getNeighborAverage
 from filter import filter_B_from_A_rowwise
@@ -307,5 +308,13 @@ class FilterTest(unittest.TestCase):
         self.assertEqual(f2, True)
 
 if __name__ == '__main__':
+
+    print("/////////////////////////////////////////////////////////////////////////////")
+    print("Running", __file__)
+    print("/////////////////////////////////////////////////////////////////////////////")
+    print("Python Interpreter Version =", platform.python_version())
+    print("/////////////////////////////////////////////////////////////////////////////")
+    print("Start testing ...")
+    print("/////////////////////////////////////////////////////////////////////////////")
 
     unittest.main()
