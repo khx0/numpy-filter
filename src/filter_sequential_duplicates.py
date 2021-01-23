@@ -50,6 +50,8 @@ def get_multiplicity(X):
 
 if __name__ == '__main__':
 
+    pass
+
     # X = np.array([1, 1, 2, 3, 4, 5])
     # returns [(0, 2)]
 
@@ -74,8 +76,8 @@ if __name__ == '__main__':
     # X = np.array([2, 2, 4, 4, 4, 4, 4])
     # returns [(0, 2), (2, 5)]
 
-    X = np.array([90, 100, 4, 4, 4, 1])
+    # X = np.array([90, 100, 4, 4, 4, 1])
     # returns [(2, 3)]
 
-    multiplicity = get_multiplicity(X)
-    print(multiplicity)
+    # multiplicity = get_multiplicity(X)
+    # print(multiplicity)
