@@ -5,7 +5,7 @@
 # contact: khx0@posteo.net
 # date: 2021-01-23
 # file: test_filter_sequential_duplicates.py
-# tested with python 3.7.6. and numpy 1.19.5
+# tested with python 3.7.6 and numpy 1.19.5
 ###############################################################################
 
 '''
