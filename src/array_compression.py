@@ -5,7 +5,7 @@
 # contact: khx0@posteo.net
 # date: 2021-01-23
 # file: array_compression.py
-# tested with python 3.7.6. and numpy 1.19.5
+# tested with python 3.7.6 and numpy 1.19.5
 ##########################################################################################
 
 import numpy as np
@@ -31,7 +31,7 @@ def getDisjointIntervals(X: np.ndarray) -> list:
                 currentToken = X[cc]
                 reading = True
 
-            elif (X[cc] != currentToken and reading):
+            elif (X[cc] != currentToken) and reading:
                 idxRight = (cc - 1)
                 record = (int(idxLeft), int(idxRight), int(currentToken))
                 intervals.append(record)

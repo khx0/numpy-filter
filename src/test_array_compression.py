@@ -3,31 +3,37 @@
 ##########################################################################################
 # author: Nikolas Schnellbaecher
 # contact: khx0@posteo.net
-# date: 2019-11-01
+# date: 2021-01-23
 # file: test_arrayCompression.py
-# tested with python 3.7.2
+# tested with python 3.7.6 and numpy 1.19.5
 ##########################################################################################
 
 '''
-Tested with pytest version 5.5.2.
-Invocation:
-cd to the directory containing this script and
-then invoke
+--- Example invocations ---
+Cd to the directory containing this script and there invoke
 $python -m pytest (-v)
-where python is your chosen python interpreter or
-alternatively simply call
+where python is your chosen python interpreter or alternatively only call
 $pytest
 or
 $pytest -v
 using the default python interpreter on your system.
-The -v flag (equal to --verbose) sets the pytest mode to verbose.
+The -v flag (equal to --verbose) sets the pytest mode to 'verbose'.
+-------------------------------------------------------------------------------
+To only run the tests in this test file use
+$python -m pytest (-v) test_*.py
+where test_*.py is the considered unit test script.
+-------------------------------------------------------------------------------
+plain unittest invocation
+$python test_*.py
+-------------------------------------------------------------------------------
+Tested with pytest version 6.2.1.
 '''
 
-import os
-import numpy as np
+import platform
 import unittest
+import numpy as np
 
-from arrayCompression import getDisjointIntervals
+from array_compression import getDisjointIntervals
 
 class TestGetDisjointIntervals(unittest.TestCase):
     """
@@ -98,5 +104,13 @@ class TestGetDisjointIntervals(unittest.TestCase):
                                 (9, 9, 10)])
 
 if __name__ == '__main__':
+
+    print("/////////////////////////////////////////////////////////////////////////////")
+    print("Running", __file__)
+    print("/////////////////////////////////////////////////////////////////////////////")
+    print("Python Interpreter Version =", platform.python_version())
+    print("/////////////////////////////////////////////////////////////////////////////")
+    print("Start testing ...")
+    print("/////////////////////////////////////////////////////////////////////////////")
 
     unittest.main()
