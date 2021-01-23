@@ -3,12 +3,11 @@
 ##########################################################################################
 # author: Nikolas Schnellbaecher
 # contact: khx0@posteo.net
-# date: 2019-11-10
-# file: arrayCompression.py
+# date: 2021-01-23
+# file: array_compression.py
+# tested with python 3.7.6. and numpy 1.19.5
 ##########################################################################################
 
-import os
-import sys
 import numpy as np
 
 def getDisjointIntervals(X: np.ndarray) -> list:
@@ -18,7 +17,7 @@ def getDisjointIntervals(X: np.ndarray) -> list:
     Performs a single pass over X.
     This is an example of a compressed representation of a (1d) integer array.
     """
-    if (len(X) == 0):
+    if len(X) == 0:
         return []
     else:
         cc = 0
@@ -37,7 +36,7 @@ def getDisjointIntervals(X: np.ndarray) -> list:
                 record = (int(idxLeft), int(idxRight), int(currentToken))
                 intervals.append(record)
 
-                if (X[cc] > 0):
+                if X[cc] > 0:
                     idxLeft = cc
                     currentToken = X[cc]
                     reading = True

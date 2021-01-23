@@ -4,10 +4,11 @@ light weight data filter routines using numpy
 mostly stand alone functions or classes which can be integrated into data evaluation pipelines
 
 modules:
-* arrayCompression.py
+* array_compression.py
+* filter_sequential_duplicates.py
 * filter.py
 * matrixtools.py
 * slicer.py
 
-All functionality has been tested with Python 3.7.2 and numpy 1.18.1.
-Unit test are performed using the unittest module and pytest (5.3.5).
+All functionality has been tested with Python 3.7.6 and numpy 1.19.5.
+Unit test are performed using the unittest module and pytest 6.2.1.
