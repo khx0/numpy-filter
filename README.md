@@ -10,5 +10,5 @@ modules:
 * matrixtools.py
 * slicer.py
 
-All functionality has been tested with Python 3.7.6 and numpy 1.19.5.
-Unit test are performed using the unittest module and pytest 6.2.1.
+All functionality has been tested with **Python 3.7.6** and **numpy 1.19.5**.
+Unit test are performed using the **unittest** module and **pytest 6.2.1**.
