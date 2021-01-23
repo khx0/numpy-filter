@@ -5,13 +5,12 @@
 # contact: khx0@posteo.net
 # date: 2021-01-23
 # file: test_filter_sequential_duplicates.py
+# tested with python 3.7.6. and numpy 1.19.5
 ###############################################################################
 
 '''
-Tested with pytest version 6.2.1.
-Example invocation:
-cd to the directory containing this script and
-then invoke
+=== Example invocations ===
+Cd to the directory containing this script and there invoke
 $python -m pytest (-v)
 where python is your chosen python interpreter or
 alternatively simply call
@@ -20,9 +19,15 @@ or
 $pytest -v
 using the default python interpreter on your system.
 The -v flag (equal to --verbose) sets the pytest mode to verbose.
-
+-------------------------------------------------------------------------------
+To only run the tests in this test file use
+$python -m pytest (-v) test_*.py
+where test_*.py is the considered unit test script.
+-------------------------------------------------------------------------------
 plain unittest invocation
 $python test_*.py
+-------------------------------------------------------------------------------
+Tested with pytest version 6.2.1.
 '''
 
 import platform
