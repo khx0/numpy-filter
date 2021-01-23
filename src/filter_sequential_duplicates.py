@@ -5,13 +5,14 @@
 # contact: khx0@posteo.net
 # date: 2021-01-23
 # file: filter_sequential_duplicates.py
+# tested with python 3.7.6. and numpy 1.19.5
 ###############################################################################
 
 import numpy as np
 
 def get_multiplicity(X):
     '''
-    multiplicity is a list of tuples.
+    Returns multiplicity - a list of tuples.
     Each tuple has the format (index, multiplicity),
     where only multiple records, i.e. multiplicity >= 2 are recorded
     Non-multiple entries do not create a record in the multiplicity list.
@@ -51,33 +52,3 @@ def get_multiplicity(X):
 if __name__ == '__main__':
 
     pass
-
-    # X = np.array([1, 1, 2, 3, 4, 5])
-    # returns [(0, 2)]
-
-    # X = np.array([1, 2, 2, 3, 4, 5])
-    # returns [(1, 2)]
-
-    # X = np.array([1, 2, 3, 4, 5, 5])
-    # returns [(4, 2)]
-
-    # X = np.array([1, 1, 2, 2, 3, 4, 5])
-    # returns [(0, 2), (2, 2)]
-
-    # X = np.array([])
-    # returns []
-
-    # X = np.array([3])
-    # returns []
-
-    # X = np.array([1, 1, 1, 2, 2, 2, 3, 1, 4, 5, 5, 1, 2, 2, 2])
-    # returns [(0, 3), (3, 3), (9, 2), (12, 3)]
-
-    # X = np.array([2, 2, 4, 4, 4, 4, 4])
-    # returns [(0, 2), (2, 5)]
-
-    # X = np.array([90, 100, 4, 4, 4, 1])
-    # returns [(2, 3)]
-
-    # multiplicity = get_multiplicity(X)
-    # print(multiplicity)

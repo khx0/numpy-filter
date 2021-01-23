@@ -9,7 +9,7 @@
 ###############################################################################
 
 '''
-=== Example invocations ===
+--- Example invocations ---
 Cd to the directory containing this script and there invoke
 $python -m pytest (-v)
 where python is your chosen python interpreter or
@@ -98,6 +98,7 @@ class FilterSequentialDuplicatesTest(unittest.TestCase):
         self.assertTrue(multiplicity == reference)
 
         return None
+
 
 if __name__ == '__main__':
 
