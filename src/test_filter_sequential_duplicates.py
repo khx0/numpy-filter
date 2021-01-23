@@ -38,7 +38,30 @@ class FilterSequentialDuplicatesTest(unittest.TestCase):
 
         X = np.array([1, 1, 2, 3, 4, 5])
         reference = [(0, 2)]
+        multiplicity = get_multiplicity(X)
+        print(multiplicity)
+        self.assertTrue(multiplicity == reference)
 
+        X = np.array([1, 2, 2, 3, 4, 5])
+        reference = [(1, 2)]
+        multiplicity = get_multiplicity(X)
+        print(multiplicity)
+        self.assertTrue(multiplicity == reference)
+
+        X = np.array([1, 2, 3, 4, 5, 5])
+        reference = [(4, 2)]
+        multiplicity = get_multiplicity(X)
+        print(multiplicity)
+        self.assertTrue(multiplicity == reference)
+
+        X = np.array([1, 1, 2, 2, 3, 4, 5])
+        reference = [(0, 2), (2, 2)]
+        multiplicity = get_multiplicity(X)
+        print(multiplicity)
+        self.assertTrue(multiplicity == reference)
+
+        X = np.array([])
+        reference = []
         multiplicity = get_multiplicity(X)
         print(multiplicity)
         self.assertTrue(multiplicity == reference)
@@ -48,21 +71,6 @@ class FilterSequentialDuplicatesTest(unittest.TestCase):
 
 
 
-
-
-
-
-        # X = np.array([1, 2, 2, 3, 4, 5])
-        # returns [(1, 2)]
-
-        # X = np.array([1, 2, 3, 4, 5, 5])
-        # returns [(4, 2)]
-
-        # X = np.array([1, 1, 2, 2, 3, 4, 5])
-        # returns [(0, 2), (2, 2)]
-
-        # X = np.array([])
-        # returns []
 
         # X = np.array([3])
         # returns []
