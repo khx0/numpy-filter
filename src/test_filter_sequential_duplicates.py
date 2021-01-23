@@ -20,12 +20,14 @@ or
 $pytest -v
 using the default python interpreter on your system.
 The -v flag (equal to --verbose) sets the pytest mode to verbose.
+
+plain unittest invocation
+$python test_*.py
 '''
 
-import os
 import platform
-import numpy as np
 import unittest
+import numpy as np
 
 from filter_sequential_duplicates import get_multiplicity
 
