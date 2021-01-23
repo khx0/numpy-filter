@@ -33,56 +33,62 @@ class FilterSequentialDuplicatesTest(unittest.TestCase):
 
     def test_01(self):
         """
-        natrual sorting test case #1 using the natural_sort() function
+        test the get_multiplicity function
         """
 
         X = np.array([1, 1, 2, 3, 4, 5])
         reference = [(0, 2)]
         multiplicity = get_multiplicity(X)
-        print(multiplicity)
+        # print(multiplicity)
         self.assertTrue(multiplicity == reference)
 
         X = np.array([1, 2, 2, 3, 4, 5])
         reference = [(1, 2)]
         multiplicity = get_multiplicity(X)
-        print(multiplicity)
+        # print(multiplicity)
         self.assertTrue(multiplicity == reference)
 
         X = np.array([1, 2, 3, 4, 5, 5])
         reference = [(4, 2)]
         multiplicity = get_multiplicity(X)
-        print(multiplicity)
+        # print(multiplicity)
         self.assertTrue(multiplicity == reference)
 
         X = np.array([1, 1, 2, 2, 3, 4, 5])
         reference = [(0, 2), (2, 2)]
         multiplicity = get_multiplicity(X)
-        print(multiplicity)
+        # print(multiplicity)
         self.assertTrue(multiplicity == reference)
 
         X = np.array([])
         reference = []
         multiplicity = get_multiplicity(X)
-        print(multiplicity)
+        # print(multiplicity)
         self.assertTrue(multiplicity == reference)
 
+        X = np.array([3])
+        reference = []
+        multiplicity = get_multiplicity(X)
+        # print(multiplicity)
+        self.assertTrue(multiplicity == reference)
 
+        X = np.array([1, 1, 1, 2, 2, 2, 3, 1, 4, 5, 5, 1, 2, 2, 2])
+        reference = [(0, 3), (3, 3), (9, 2), (12, 3)]
+        multiplicity = get_multiplicity(X)
+        # print(multiplicity)
+        self.assertTrue(multiplicity == reference)
 
+        X = np.array([2, 2, 4, 4, 4, 4, 4])
+        reference = [(0, 2), (2, 5)]
+        multiplicity = get_multiplicity(X)
+        # print(multiplicity)
+        self.assertTrue(multiplicity == reference)
 
-
-
-
-        # X = np.array([3])
-        # returns []
-
-        # X = np.array([1, 1, 1, 2, 2, 2, 3, 1, 4, 5, 5, 1, 2, 2, 2])
-        # returns [(0, 3), (3, 3), (9, 2), (12, 3)]
-
-        # X = np.array([2, 2, 4, 4, 4, 4, 4])
-        # returns [(0, 2), (2, 5)]
-
-        # X = np.array([90, 100, 4, 4, 4, 1])
-        # returns [(2, 3)]
+        X = np.array([90, 100, 4, 4, 4, 1])
+        reference = [(2, 3)]
+        multiplicity = get_multiplicity(X)
+        # print(multiplicity)
+        self.assertTrue(multiplicity == reference)
 
         return None
 
