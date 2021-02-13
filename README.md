@@ -1,4 +1,6 @@
 # numpy-filter
+
+## about
 light weight data filter routines using numpy
 
 mostly stand alone functions or classes which can be integrated into data evaluation pipelines
@@ -10,5 +12,6 @@ mostly stand alone functions or classes which can be integrated into data evalua
 * matrixtools.py
 * slicer.py
 
-All functionality has been tested with **Python 3.7.6** and **numpy 1.19.5**.
-Unit test are performed using the **unittest** module and **pytest 6.2.1**.
+## versions
+All functionality has been tested with **Python 3.7.6** and **numpy 1.20.1**.
+Unit test are performed using the **unittest** module and **pytest 6.2.2**.
