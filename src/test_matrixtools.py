@@ -45,17 +45,17 @@ class MatrixtoolsTest(unittest.TestCase):
     def test_01(self):
 
         X = np.zeros((1, 1))
-        res = fillSymmetricMatrix(X)    
+        res = fillSymmetricMatrix(X)
         self.assertTrue(np.array_equal(res, X))
 
         X = np.zeros((1, 1))
         X[0, 0] = 1.0
-        res = fillSymmetricMatrix(X)    
+        res = fillSymmetricMatrix(X)
         self.assertTrue(np.array_equal(res, X))
 
         X = np.zeros((1, 1))
         X[0, 0] = -99.99
-        res = fillSymmetricMatrix(X)    
+        res = fillSymmetricMatrix(X)
         self.assertTrue(np.array_equal(res, X))
 
         X = np.zeros((2, 2))
@@ -106,5 +106,13 @@ class MatrixtoolsTest(unittest.TestCase):
         return None
 
 if __name__ == '__main__':
+
+    print("/////////////////////////////////////////////////////////////////////////////")
+    print("Running", __file__)
+    print("/////////////////////////////////////////////////////////////////////////////")
+    print("Python Interpreter Version =", platform.python_version())
+    print("/////////////////////////////////////////////////////////////////////////////")
+    print("Start testing ...")
+    print("/////////////////////////////////////////////////////////////////////////////")
 
     unittest.main()

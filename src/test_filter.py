@@ -80,7 +80,7 @@ class FilterTest(unittest.TestCase):
         self.assertEqual(getNeighborAverage(X, 1), 1.0)
         self.assertEqual(getNeighborAverage(X, 2), 1.0)
         self.assertEqual(getNeighborAverage(X, 3), 1.0)
-        
+
     def test_07(self):
 
         X = np.array([np.nan, np.nan, np.nan, 4.0])
@@ -248,7 +248,7 @@ class FilterTest(unittest.TestCase):
 
         self.assertEqual(f1, True)
         self.assertEqual(f2, True)
-        
+
     def test_rowwise_filter_05(self):
         
         A = np.array([[1, 2, 3],
