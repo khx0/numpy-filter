@@ -5,7 +5,7 @@
 # contact: khx0@posteo.net
 # date: 2021-01-23
 # file: test_filter.py
-# tested with python 3.7.6 and numpy 1.19.5
+# tested with python 3.7.6 and numpy 1.20.1
 ##########################################################################################
 
 '''
@@ -26,7 +26,7 @@ where test_*.py is the considered unit test script.
 plain unittest invocation
 $python test_*.py
 -------------------------------------------------------------------------------
-Tested with pytest version 6.2.1.
+Tested with pytest version 6.2.2.
 '''
 
 import platform
