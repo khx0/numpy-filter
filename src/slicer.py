@@ -3,9 +3,9 @@
 ##########################################################################################
 # author: Nikolas Schnellbaecher
 # contact: khx0@posteo.net
-# date: 2021-01-23
+# date: 2021-02-14
 # file: slicer.py
-# tested with python 3.7.6 and numpy 1.19.5
+# tested with python 3.7.6 and numpy 1.20.1
 ##########################################################################################
 
 import numpy as np
@@ -88,7 +88,7 @@ def getMonotonicSubIntervals(X: np.ndarray) -> (list, list):
     '''
 
     # Subintervals make only sense for arrays which contain at least two entries.
-    assert (len(X) >= 2), "Error: len(X) < 2."
+    assert (len(X) >= 2), "len(X) < 2 assertion failed."
 
     intervals = []
     indexList = []
